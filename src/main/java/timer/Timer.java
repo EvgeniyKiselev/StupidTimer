@@ -1,8 +1,5 @@
 package timer;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 public class Timer {
     public void timer() {
         for (int i = 0; i < 31; i++) {
@@ -21,15 +18,7 @@ public class Timer {
 
 
     public void timerWithTimer() {
-        MyThread mThread = new MyThread();
+        Thread mThread = new MyThread();
         mThread.start();
-        for (int i = 0; i < 31; i++) {
-            System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
     }
 }
